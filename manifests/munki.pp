@@ -44,6 +44,10 @@ class mac_admin::munki(
     $manifesturl = $mac_admin::params::manifesturl,
     $additionalhttpheaders = $mac_admin::params::additionalhttpheaders,
     $unattendedappleupdates = false,
+    $useclientcertificate = $mac_admin::params::useclientcertificate,
+    $clientcertificatepath = $mac_admin::params::clientcertificatepath,
+    $clientkeypath = $mac_admin::params::clientkeypath,
+    $softwarerepocacertificate = $mac_admin::params::softwarerepocacertificate,
     ) inherits mac_admin::params {
 
     ## Install the latest Munki

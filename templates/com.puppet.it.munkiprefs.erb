@@ -42,6 +42,15 @@
 								<key>UnattendedAppleUpdates</key>
 								<% if @unattendedappleupdates == true -%><true/><% else -%><false/>
 								<% end -%>
+								<key>UseClientCertificate</key>
+								<% if @useclientcertificate == true -%><true/><% else -%><false/>
+								<% end -%>
+								<% if @clientcertificatepath !="" -%><key>ClientCertificatePath</key>
+                                <string><%= @clientcertificatepath -%></string><% end -%>
+								<% if @clientkeypath !="" -%><key>ClientKeyPath</key>
+                                <string><%= @clientkeypath -%></string><% end -%>
+                                <% if @softwarerepocacertificate !="" -%><key>SoftwareRepoCACertificate</key>
+                                <string><%= @softwarerepocacertificate -%></string><% end -%>
 							</dict>
 						</dict>
 					</array>
@@ -64,12 +73,11 @@
 	<key>PayloadDescription</key>
 	<string>Included custom settings:
 ManagedInstalls
-
-Git revision: 6c7f6a207a</string>
+    </string>
 	<key>PayloadDisplayName</key>
 	<string>Munki Preferences</string>
 	<key>PayloadIdentifier</key>
-	<string>com.grahamgilbert.munkiprefs</string>
+	<string>com.puppet.it.munkiprefs</string>
 	<key>PayloadOrganization</key>
 	<string></string>
 	<key>PayloadRemovalDisallowed</key>

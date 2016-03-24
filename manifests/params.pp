@@ -14,6 +14,10 @@ class mac_admin::params{
         $crypturl = 'http://crypt'
         $hook_priority = '0'
         $additionalhttpheaders = ''
+        $useclientcertificate = false
+        $clientcertificatepath = ''
+        $clientkeypath = ''
+        $softwarerepocacertificate = ''
     }else{
         fail('unsupported operating system')
     }
