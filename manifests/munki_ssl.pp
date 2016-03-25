@@ -13,7 +13,7 @@ class mac_admin::munki_ssl {
     mode    => '0640',
     owner   => root,
     group   => wheel,
-    source  => "${confdir}/ssl/certs/ca.pem",
+    source  => "${settings::confdir}/ssl/certs/ca.pem",
     require =>  File['/Library/Managed Installs/certs/'],
   }
  
@@ -21,7 +21,7 @@ class mac_admin::munki_ssl {
     mode    => '0640',
     owner   => root,
     group   => wheel,
-    source  => "${confdir}/ssl/certs/${clientcert}.pem",
+    source  => "${settings::confdir}/ssl/certs/${clientcert}.pem",
     require =>  File['/Library/Managed Installs/certs/'],
   }
  
@@ -29,7 +29,7 @@ class mac_admin::munki_ssl {
     mode    => '0640',
     owner   => root,
     group   => wheel,
-    source  => "${confdir}/ssl/private_keys/${clientcert}.pem",
+    source  => "${settings::confdir}/ssl/private_keys/${clientcert}.pem",
     require =>  File['/Library/Managed Installs/certs/'],
   }
 }
