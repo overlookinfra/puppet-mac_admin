@@ -23,9 +23,11 @@ class mac_admin::munki_local_manifest(
     owner   => 'root',
     group   => 'admin',
     mode    => '0644',
-    content => template('mac_admin/com.puppet.it.munki_local_manifest.erb'),
+#    content => template('mac_admin/com.puppet.it.munki_local_manifest.erb'),
     require => File['/Library/Managed Installs/manifests/'],
   }
+
+  # Build the local Munki manifest
 
   property_list_key { 'catalogs':
     ensure     => 'present',
@@ -35,4 +37,49 @@ class mac_admin::munki_local_manifest(
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }  
+
+  property_list_key { 'managed_installs':
+    ensure     => 'present',
+    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    key        => 'managed_installs',
+    value      => ['software1', 'software2'],
+    value_type => 'array',
+    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+  }
+
+  property_list_key { 'managed_uninstalls':
+    ensure     => 'present',
+    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    key        => 'managed_uninstalls',
+    value      => ['software1', 'software2'],
+    value_type => 'array',
+    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+  }
+
+  property_list_key { 'included_manifests':
+    ensure     => 'present',
+    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    key        => 'included_manifests',
+    value      => ['software1', 'software2'],
+    value_type => 'array',
+    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+  }
+
+  property_list_key { 'managed_updates':
+    ensure     => 'present',
+    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    key        => 'managed_updates',
+    value      => ['software1', 'software2'],
+    value_type => 'array',
+    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+  }
+
+  property_list_key { 'optional_installs':
+    ensure     => 'present',
+    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    key        => 'optional_installs',
+    value      => ['software1', 'software2'],
+    value_type => 'array',
+    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+  }
 }
