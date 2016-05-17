@@ -18,7 +18,7 @@ class mac_admin::munki_local_manifest(
     mode   => '0755',
   }
 
-  file { "/Library/Managed Installs/manifests/${clientcert}.plist":
+  file { "/Library/Managed Installs/manifests/${clientcert}":
     ensure  => 'file',
     owner   => 'root',
     group   => 'admin',
