@@ -24,6 +24,7 @@ class mac_admin::munki_local_manifest(
     group   => 'admin',
     mode    => '0644',
     content => template('mac_admin/com.puppet.it.munki_local_manifest.erb'),
+    require => File['/Library/Managed Installs/manifests/'],
   }
 
   property_list_key { 'catalogs':
@@ -32,5 +33,6 @@ class mac_admin::munki_local_manifest(
     key        => 'catalogs',
     value      => ['software1', 'software2'],
     value_type => 'array',
+    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }  
 }
