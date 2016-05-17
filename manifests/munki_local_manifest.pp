@@ -23,7 +23,7 @@ class mac_admin::munki_local_manifest(
     owner   => 'root',
     group   => 'admin',
     mode    => '0644',
-#    content => template('mac_admin/com.puppet.it.munki_local_manifest.erb'),
+    content => template('mac_admin/com.puppet.it.munki_local_manifest.erb'),
     require => File['/Library/Managed Installs/manifests/'],
   }
 
