@@ -18,6 +18,7 @@ class mac_admin::params{
         $clientcertificatepath = ''
         $clientkeypath = ''
         $softwarerepocacertificate = ''
+        $localonlymanifest = ''
     }else{
         fail('unsupported operating system')
     }
