@@ -48,6 +48,7 @@ class mac_admin::munki(
     $clientcertificatepath = $mac_admin::params::clientcertificatepath,
     $clientkeypath = $mac_admin::params::clientkeypath,
     $softwarerepocacertificate = $mac_admin::params::softwarerepocacertificate,
+    $localonlymanifest = $mac_admin::params::localonlymanifest,
     ) inherits mac_admin::params {
 
     ## Install the latest Munki
