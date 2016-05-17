@@ -49,8 +49,10 @@
                                 <string><%= @clientcertificatepath -%></string><% end -%>
 								<% if @clientkeypath !="" -%><key>ClientKeyPath</key>
                                 <string><%= @clientkeypath -%></string><% end -%>
-                                <% if @softwarerepocacertificate !="" -%><key>SoftwareRepoCACertificate</key>
+                                                                <% if @softwarerepocacertificate !="" -%><key>SoftwareRepoCACertificate</key>
                                 <string><%= @softwarerepocacertificate -%></string><% end -%>
+                                                                <% if @localonlymanifest !="" -%><key>LocalOnlyManifest</key>
+                                <string><%= @localonlymanifest -%></string><% end -%>
 							</dict>
 						</dict>
 					</array>
