@@ -33,7 +33,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'catalogs',
-    value      => ['software1', 'software2'],
+    value      => ['testing'],
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }  
@@ -42,7 +42,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'managed_installs',
-    value      => ['software1', 'software2'],
+    value      => [],
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
