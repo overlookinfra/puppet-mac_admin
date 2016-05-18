@@ -42,7 +42,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'managed_installs',
-    value      => [],
+    value      => ['Chrome', 'Firefox'],
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
@@ -78,7 +78,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'optional_installs',
-    value      => ['1Password', 'Alfred2'],
+    value      => [],
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
