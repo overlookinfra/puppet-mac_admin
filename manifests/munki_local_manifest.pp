@@ -3,7 +3,7 @@ class mac_admin::munki_local_manifest(
     $munki_managed_installs = $mac_admin::params::munki_managed_installs,
     $munki_managed_uninstalls = $mac_admin::params::munki_managed_uninstalls,
     $munki_included_manifests = $mac_admin::params::munki_included_manifests,
-    $munki_managed_updates = $mac_admin::params::muki_managed_updates,
+    $munki_managed_updates = $mac_admin::params::munki_managed_updates,
     $munki_optional_installs = $mac_admin::params::munki_optional_installs,
     ) inherits mac_admin::params {
 
