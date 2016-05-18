@@ -18,7 +18,7 @@ class mac_admin::munki_local_manifest(
     mode   => '0755',
   }
 
-  file { "/Library/Managed Installs/manifests/${clientcert}.plist":
+  file { "/Library/Managed Installs/manifests/${clientcert}":
     ensure  => 'file',
     owner   => 'root',
     group   => 'admin',
@@ -31,55 +31,55 @@ class mac_admin::munki_local_manifest(
 
   property_list_key { 'catalogs':
     ensure     => 'present',
-    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    path       => "/Library/Managed Installs/manifests/${clientcert}",
     key        => 'catalogs',
     value      => ['testing'],
     value_type => 'array',
-    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+    require    => File["/Library/Managed Installs/manifests/${clientcert}"],
   }  
 
   property_list_key { 'managed_installs':
     ensure     => 'present',
-    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    path       => "/Library/Managed Installs/manifests/${clientcert}",
     key        => 'managed_installs',
     value      => ['Chrome', 'Firefox'],
     value_type => 'array',
-    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+    require    => File["/Library/Managed Installs/manifests/${clientcert}"],
   }
 
   property_list_key { 'managed_uninstalls':
     ensure     => 'present',
-    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    path       => "/Library/Managed Installs/manifests/${clientcert}",
     key        => 'managed_uninstalls',
     value      => [],
     value_type => 'array',
-    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+    require    => File["/Library/Managed Installs/manifests/${clientcert}"],
   }
 
   property_list_key { 'included_manifests':
     ensure     => 'present',
-    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    path       => "/Library/Managed Installs/manifests/${clientcert}",
     key        => 'included_manifests',
     value      => [],
     value_type => 'array',
-    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+    require    => File["/Library/Managed Installs/manifests/${clientcert}"],
   }
 
   property_list_key { 'managed_updates':
     ensure     => 'present',
-    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    path       => "/Library/Managed Installs/manifests/${clientcert}",
     key        => 'managed_updates',
     value      => [],
     value_type => 'array',
-    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+    require    => File["/Library/Managed Installs/manifests/${clientcert}"],
   }
 
   property_list_key { 'optional_installs':
     ensure     => 'present',
-    path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
+    path       => "/Library/Managed Installs/manifests/${clientcert}",
     key        => 'optional_installs',
     value      => [],
     value_type => 'array',
-    require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
+    require    => File["/Library/Managed Installs/manifests/${clientcert}"],
   }
 }
