@@ -19,6 +19,12 @@ class mac_admin::params{
         $clientkeypath = ''
         $softwarerepocacertificate = ''
         $localonlymanifest = ''
+        $munki_catalogs = ''
+        $munki_managed_installs = ''
+        $munki_managed_uninstalls = ''
+        $munki_included_manifests = ''
+        $munki_managed_updates = ''
+        $munki_optional_installs = ''
     }else{
         fail('unsupported operating system')
     }
