@@ -33,7 +33,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'catalogs',
-    value      => [$munki_catalogs],
+    value      => $munki_catalogs,
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }  
@@ -51,7 +51,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'managed_uninstalls',
-    value      => [$munki_managed_uninstalls],
+    value      => $munki_managed_uninstalls,
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
@@ -60,7 +60,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'included_manifests',
-    value      => [$munki_included_manifests],
+    value      => $munki_included_manifests,
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
@@ -69,7 +69,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'managed_updates',
-    value      => [$munki_managed_updates],
+    value      => $munki_managed_updates,
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
@@ -78,7 +78,7 @@ class mac_admin::munki_local_manifest(
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
     key        => 'optional_installs',
-    value      => [$munki_optional_installs],
+    value      => $munki_optional_installs,
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
