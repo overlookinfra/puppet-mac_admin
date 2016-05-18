@@ -3,10 +3,11 @@ class mac_admin::munki_ssl {
       fail('The munki_ssl module is only supported on Darwin/OS X')
   }
   
-  file { ['/Library/Managed Installs', '/Library/Managed Installs/certs/' ]:
+  file { ['/Library/Managed Installs/certs/']:
     ensure => directory,
     owner  => 'root',
     group  => 'wheel',
+    mode   => '0640',
   }
 
   file { '/Library/Managed Installs/certs/ca.pem':
