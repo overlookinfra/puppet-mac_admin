@@ -4,14 +4,27 @@
 <dict>
 	<key>catalogs</key>
         <array>
-        <% @munki_catalogs.each do |catalog| %>
-        <string><%= catalog %></string>
-        <% end %>
+        <% @munki_catalogs.each do |catalog| %><string><%= catalog %></string><% end %>
         </array>
 	<key>managed_installs</key>
+        <array>
+        <% @munki_managed_installs.each do |managed_install| %><string><%= managed_install %></string><% end %>
+        </array>
 	<key>managed_uninstalls</key>
+        <array>
+        <% @munki_managed_uninstalls.each do |managed_uninstall| %><string><%= managed_uninstall %></string><% end %>
+        </array>
 	<key>included_manifests</key>
+        <array>
+        <% @munki_included_manifests.each do |included_manifest| %><string><%= included_manifest %></string><% end %>
+        </array>
 	<key>managed_updates</key>
+        <array>
+        <% @munki_managed_updates.each do |managed_update| %><string><%= managed_update %></string><% end %>
+        </array>
 	<key>optional_installs</key>
+        <array>
+        <% @munki_optional_installs.each do |optional_install| %><string><%= optional_install %></string><% end %>
+        </array>
 </dict>
 </plist>
