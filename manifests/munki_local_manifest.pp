@@ -18,7 +18,7 @@ class mac_admin::munki_local_manifest(
     mode   => '0755',
   }
 
-  file { "/Library/Managed Installs/manifests/${clientcert}.plist":
+  file { "/Library/Managed Installs/manifests/${clientcert}":
     ensure  => 'file',
     owner   => 'root',
     group   => 'admin',
@@ -28,7 +28,7 @@ class mac_admin::munki_local_manifest(
   }
 
   # Build the local Munki manifest
-
+/*
   property_list_key { 'catalogs':
     ensure     => 'present',
     path       => "/Library/Managed Installs/manifests/${clientcert}.plist",
@@ -82,4 +82,5 @@ class mac_admin::munki_local_manifest(
     value_type => 'array',
     require    => File["/Library/Managed Installs/manifests/${clientcert}.plist"],
   }
+*/
 }
