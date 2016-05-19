@@ -3,6 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>catalogs</key>
+        <array>
+        <% @munki_catalogs.each do |catalog| %>
+        <string><%= catalog %></string>
+        <% end %>
+        </array>
 	<key>managed_installs</key>
 	<key>managed_uninstalls</key>
 	<key>included_manifests</key>
