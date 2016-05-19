@@ -2,13 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+        <% if @munki_catalogs != "" -%>
 	<key>catalogs</key>
         <array>
-        <% @munki_catalogs.each do |catalog| %><string><%= catalog %></string><% end %>
-        </array>
+        <% @munki_catalogs.each do |catalog| %><string><%= catalog %></string>
+<% end -%>
+        </array><% end -%>
 	<key>managed_installs</key>
         <array>
-        <% @munki_managed_installs.each do |managed_install| %><string><%= managed_install %></string><% end %>
+        <% @munki_managed_installs.each do |managed_install| %><string><%= managed_install %></string>
+<% end %>
         </array>
 	<key>managed_uninstalls</key>
         <array>
@@ -21,7 +24,8 @@
         </array>
 	<key>optional_installs</key>
         <array>
-        <% @munki_optional_installs.each do |optional_install| %><string><%= optional_install %></string><% end %>
+        <% @munki_optional_installs.each do |optional_install| %><string><%= optional_install %></string>
+<% end %>
         </array>
 </dict>
 </plist>
