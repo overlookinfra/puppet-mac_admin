@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-        <% if @munki_catalogs != "" -%>
-	<key>catalogs</key>
-        <array>
-        <% @munki_catalogs.each do |catalog| %><string><%= catalog %></string>
-<% end -%>
-        </array><% end -%>
-	<key>managed_installs</key>
-        <array>
-        <% @munki_managed_installs.each do |managed_install| %><string><%= managed_install %></string>
-<% end %>
-        </array>
-	<key>managed_uninstalls</key>
-        <array>
-        </array>
-	<key>included_manifests</key>
-        <array>
-        </array>
-	<key>managed_updates</key>
-        <array>
-        </array>
-	<key>optional_installs</key>
-        <array>
-        <% @munki_optional_installs.each do |optional_install| %><string><%= optional_install %></string>
-<% end %>
-        </array>
+<dict><% if @munki_catalogs != "" %>
+  <key>catalogs</key>
+    <array><% @munki_catalogs.each do |catalog| %>
+      <string><%= catalog %></string><% end %>
+    </array><% end %><% if @munki_managed_installs != "" %>
+  <key>managed_installs</key>
+    <array><% @munki_managed_installs.each do |managed_install| %>
+      <string><%= managed_install %></string><% end %>
+    </array><% end %><% if @munki_managed_uninstalls != "" %>
+  <key>managed_uninstalls</key>
+    <array><% @munki_managed_uninstalls.each do |managed_uninstall| %>
+      <string><%= managed_uninstall %></string><% end %>
+    </array><% end %><% if @munki_included_manifests != "" %>
+  <key>included_manifests</key>
+    <array><% @munki_included_manifests.each do |included_manifest| %>
+      <string><%= included_manifest %></string><% end %>
+    </array><% end %><% if @munki_managed_updates != "" %>
+  <key>managed_updates</key>
+    <array><% @munki_managed_updates.each do |managed_update| %>
+      <string><%= managed_update %></string><% end %>
+    </array><% end %><% if @munki_optional_installs != "" %>
+  <key>optional_installs</key>
+    <array><% @munki_optional_installs.each do |optional_install| %>
+      <string><%= optional_install %></string><% end %>
+    </array><% end %>
 </dict>
 </plist>
